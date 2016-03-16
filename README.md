@@ -2,6 +2,10 @@
 
 > A boilerplate for building spa with vue, vuex, vue-router
 
+## detail
+
+firstly, get `vue-webpack-boilerplate` by [vue-cli](https://github.com/vuejs/vue-cli). and then add the dependencies(`vuex`, `vue-router`, `vuex-router-sync`) for building spa.
+
 ## Build Setup
 
 ``` bash
