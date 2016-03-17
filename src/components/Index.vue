@@ -5,9 +5,18 @@
 </template>
 
 <script>
-import store from '../store/index'
+import { increment } from '../vuex/actions'
 
 export default {
+  vuex: {
+    actions: {
+      increment
+    },
+    getters: {
+      count: state => state.count,
+      path: ({ route }) => route.path
+    }
+  },
   data () {
     return {
       msg: 'Hello World!'
@@ -15,11 +24,8 @@ export default {
   },
   computed: {
     msg: function () {
-      // bug? the store object not contain the actions
-      // store.actions.increment(1)
-      // console.log(store.actions) -> undefined
-      store.dispatch('INCREMENT', 1)
-      return 'hello' + store.state.route.path + store.state.count
+      this.increment(2)
+      return 'hello' + this.path + this.count
     }
   }
 }

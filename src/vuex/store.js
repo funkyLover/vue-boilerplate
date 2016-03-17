@@ -1,20 +1,16 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
+import { INCREMENT } from './mutation-types'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
     count: 1
   },
   mutations: {
-    INCREMENT (state, x) {
+    [INCREMENT] (state, x) {
       state.count += x
     }
-  },
-  actions: {
-    increment: 'INCREMENT'
   }
 })
-
-export default store
