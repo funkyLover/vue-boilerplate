@@ -56,6 +56,22 @@ module.exports = {
         loader: 'vue-html'
       },
       {
+        test: /\.scss$/,
+        loader: 'style!css!sass!postcss'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css!postcss'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less!postcss'
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style!css!stylus!postcss'
+      },
+      {
         test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
         loader: 'url',
         query: {
@@ -70,6 +86,9 @@ module.exports = {
       sourceMap: false,
       extract: false
     })
+  },
+  postcss: function () {
+    return [autoprefixer({ browsers: ['last 2 versions']})]
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
