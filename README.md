@@ -1,3 +1,5 @@
+> # outdated! please check [vue-spa](https://github.com/funkyLover/vue-spa) instead
+
 # vue-boilerplate
 
 > A boilerplate for building spa with vue, vuex, vue-router
